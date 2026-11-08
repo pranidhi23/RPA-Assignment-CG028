@@ -1,0 +1,114 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="studentName" />
+      <Variable x:TypeArguments="x:String" Name="usn" />
+      <Variable x:TypeArguments="x:String" Name="email" />
+      <Variable x:TypeArguments="x:String" Name="phone" />
+      <Variable x:TypeArguments="x:String" Name="course" />
+      <Variable x:TypeArguments="x:Boolean" Name="validDetails" />
+      <Variable x:TypeArguments="x:String" Name="outputPath" />
+      <Variable x:TypeArguments="x:String" Name="csvContent" />
+    </Sequence.Variables>
+    <Sequence DisplayName="Collect and Validate Student Details">
+      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Enter Student Name" IsPassword="False" Label="Enter student name:" Title="Student Registration" TopMost="False">
+        <ui:InputDialog.Result>
+          <OutArgument x:TypeArguments="x:String">[studentName]</OutArgument>
+        </ui:InputDialog.Result>
+      </ui:InputDialog>
+      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Enter USN" IsPassword="False" Label="Enter USN:" Title="Student Registration" TopMost="False">
+        <ui:InputDialog.Result>
+          <OutArgument x:TypeArguments="x:String">[usn]</OutArgument>
+        </ui:InputDialog.Result>
+      </ui:InputDialog>
+      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Enter Email" IsPassword="False" Label="Enter email address:" Title="Student Registration" TopMost="False">
+        <ui:InputDialog.Result>
+          <OutArgument x:TypeArguments="x:String">[email]</OutArgument>
+        </ui:InputDialog.Result>
+      </ui:InputDialog>
+      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Enter Phone Number" IsPassword="False" Label="Enter 10-digit phone number:" Title="Student Registration" TopMost="False">
+        <ui:InputDialog.Result>
+          <OutArgument x:TypeArguments="x:String">[phone]</OutArgument>
+        </ui:InputDialog.Result>
+      </ui:InputDialog>
+      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Enter Course" IsPassword="False" Label="Enter course:" Title="Student Registration" TopMost="False">
+        <ui:InputDialog.Result>
+          <OutArgument x:TypeArguments="x:String">[course]</OutArgument>
+        </ui:InputDialog.Result>
+      </ui:InputDialog>
+      <Assign x:TypeArguments="x:Boolean" DisplayName="Validate Student Details" To="[validDetails]" Value="[Not String.IsNullOrWhiteSpace(studentName) AndAlso System.Text.RegularExpressions.Regex.IsMatch(studentName.Trim, &quot;^[A-Za-z][A-Za-z .'-]{1,49}$&quot;) AndAlso Not String.IsNullOrWhiteSpace(usn) AndAlso System.Text.RegularExpressions.Regex.IsMatch(usn.Trim, &quot;^[A-Za-z0-9]{4,20}$&quot;) AndAlso Not String.IsNullOrWhiteSpace(email) AndAlso System.Text.RegularExpressions.Regex.IsMatch(email.Trim, &quot;^[^@\s]+@[^@\s]+\.[^@\s]+$&quot;) AndAlso System.Text.RegularExpressions.Regex.IsMatch(phone.Trim, &quot;^[0-9]{10}$&quot;) AndAlso Not String.IsNullOrWhiteSpace(course)]" />
+      <If Condition="[Not validDetails]" DisplayName="Show Validation Message">
+        <If.Then>
+          <Sequence DisplayName="Invalid Details">
+            <ui:MessageBox DisplayName="Invalid Student Details" Caption="Validation Error" Text="Invalid details. Please check the name, USN, email address, 10-digit phone number, and course." />
+          </Sequence>
+        </If.Then>
+      </If>
+    </Sequence>
+    <Assign x:TypeArguments="x:String" DisplayName="Set Registration File Path" To="[outputPath]" Value="[System.IO.Path.Combine(Environment.CurrentDirectory, &quot;StudentRegistration.csv&quot;)]" />
+    <Assign x:TypeArguments="x:String" DisplayName="Build Excel-Compatible CSV Content" To="[csvContent]" Value="[&quot;Name,USN,Email,Phone,Course&quot; &amp; Environment.NewLine &amp; String.Join(&quot;,&quot;, New String() {studentName.Trim, usn.Trim, email.Trim, phone.Trim, course.Trim})]" />
+    <ui:WriteTextFile DisplayName="Save Student Registration" FileName="[outputPath]" Text="[csvContent]" />
+    <ui:MessageBox DisplayName="Registration Successful" Caption="Student Registration" Text="[&quot;Registration successful! Student information was saved to: &quot; &amp; outputPath]" />
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+  </Sequence>
+</Activity>
