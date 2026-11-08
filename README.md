@@ -22,16 +22,16 @@ This project demonstrates how Robotic Process Automation can improve efficiency,
 
 ##  Key Features
 
-📝 **Student Registration Form**  
+ **Student Registration Form**  
 Provides a simple interface to enter student details, including Name, USN, Email, Phone Number, and Course.
 
-🔍 **Input Validation**  
+ **Input Validation**  
 Checks the entered information to ensure that the required details meet the validation conditions.
 
-📊 **Automated Excel Integration**  
+ **Automated Excel Integration**  
 Automatically records the submitted student information in an organised Excel spreadsheet.
 
-✅ **Registration Confirmation**  
+ **Registration Confirmation**  
 Displays a success notification once the registration process is completed successfully.
 
 ## ⚙️ Technologies Used
